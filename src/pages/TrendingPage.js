@@ -28,16 +28,18 @@ const TrendingPage = () => {
     const fetchItems = async (pageNumber) => {
         try {
             setLoading(true);
-            const response = await api.get(`/search/repositories`, {
-                params: {
-                    q: "created:>2024-07-15",
-                    page: pageNumber,
-                    sort: 'stars',
-                    order: 'desc'
-                }
-            });
-            setItems((prev) => [...prev, ...response.data.items]);
-            setLoading(false);
+            setTimeout(async () => {
+                const response = await api.get(`/search/repositories`, {
+                    params: {
+                        q: "created:>2024-07-15",
+                        page: pageNumber,
+                        sort: 'stars',
+                        order: 'desc'
+                    }
+                });
+                setItems((prev) => [...prev, ...response.data.items]);
+                setLoading(false);
+            }, 1000);
         } catch (error) {
             setLoading(false);
             let messageOption = {
@@ -109,8 +111,8 @@ const TrendingPage = () => {
             </ul>
             <div>{loading && <div className="bg-white overflow-hidden sm:rounded-md mx-auto mb-2 shadow-xl">
                 <div className="px-4 py-5 sm:px-6">
-                    <div className="mt-4 flex items-center text-center">
-                        <p className="text-md font-medium text-gray-500">Loading...</p>
+                    <div className="mt-4 items-center text-center">
+                        <p className="text-md font-medium text-amber-500">Loading...</p>
                     </div>
                 </div>
             </div>}</div>
