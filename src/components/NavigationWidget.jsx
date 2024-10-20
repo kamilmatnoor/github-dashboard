@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCodeMerge, faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
-
+import { faCodeMerge, faXmark, faBars, faLinesLeaning } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 const NavigationWidget = () => {
   let Links = [
     { name: "Home", link: "/" },
@@ -33,11 +33,11 @@ const NavigationWidget = () => {
           {
             Links.map((link, index) => (
               <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
-                <a href={link.link} onClick={(e) => {
-                  e.preventDefault(); // Prevent default anchor behavior
+                <Link to={link.link} onClick={(e) => {
                   handleClick(index);
-                }}
-                  className={activeIndex === index ? 'active hover:text-gray-400 duration-500 font-bold' : 'inactive hover:text-gray-400 duration-500 font-bold'}>{link.name}</a>
+                }}>
+                  <span className={activeIndex === index ? 'active hover:text-gray-400 duration-500 font-bold' : 'inactive hover:text-gray-400 duration-500 font-bold'}>{link.name}</span>
+                </Link>
               </li>
             ))
           }
