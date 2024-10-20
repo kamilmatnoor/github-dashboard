@@ -1,16 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import api from "../api/http-request";
 const Repositories = () => {
     const [items, setItems] = useState([]);
+    const [pageNumber, setPageNumber] = useState(1);
+    const observerRef = useRef();
 
-    const fetchItems = async () => {
-        const response = await api.get("/search/repositories?q=created:>2024-07-15&sort=stars&order=desc");
+    const fetchItems = async (pageNumber) => {
+        const response = await api.get(`/search/repositories?q=created:>2024-07-15&sort=stars&order=desc&page=${pageNumber}`);
         setItems((prev) => [...prev, ...response.data.items]);
     };
 
     useEffect(() => {
-        fetchItems();
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                console.log(entries[0])
+                setPageNumber(prevPageNumber => prevPageNumber + 1)
+            }
+        });
+
+        if (observerRef.current) {
+            observer.observe(observerRef.current);
+        }
+
+        return () => {
+            if (observerRef.current) {
+                observer.unobserve(observerRef.current);
+            }
+        };
+
     }, []);
+
+    useEffect(() => {
+        fetchItems(pageNumber);
+    }, [pageNumber]);
     return (
         <div>
             <ul className="">
@@ -28,6 +50,7 @@ const Repositories = () => {
                     </li>
                 ))}
             </ul>
+            <div ref={observerRef} style={{ height: '20px' }} />
         </div>
     );
 };
