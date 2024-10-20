@@ -18,21 +18,21 @@ const NavigationWidget = () => {
   return (
     <div className='shadow-md w-full fixed top-0 left-0'>
       <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
-        <div className='font-bold text-2xl cursor-pointer flex items-center text-gray-800'>
-          <span className='text-3xl text-amber-500 mr-4 pt-2'>
+        <div className='font-bold text-lg md:text-2xl cursor-pointer flex items-center text-gray-800'>
+          <span className='text-lg md:text-2xl text-amber-500 mr-4 pt-2'>
             <FontAwesomeIcon icon={faCodeMerge} />
           </span>
           Github Dashboard
         </div>
 
-        <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
+        <div onClick={() => setOpen(!open)} className='text-lg md:text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
           <FontAwesomeIcon icon={open ? faXmark : faBars} />
         </div>
 
-        <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
+        <ul className={`divide-y divide-dashed md:divide-none md:flex md:items-center md:pb-0 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
           {
             Links.map((link, index) => (
-              <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
+              <li key={link.name} className='md:ml-8 text-lg md:text-xl md:my-0 my-4'>
                 <Link to={link.link} onClick={(e) => {
                   handleClick(index);
                 }}>

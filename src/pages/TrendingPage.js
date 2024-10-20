@@ -83,7 +83,7 @@ const TrendingPage = () => {
     return (
         <div>
             <div className="container mx-auto mb-4 text-left">
-                <h3 className="text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-2xl dark:text-white">Trending Repositories</h3>
+                <h3 className="text-lg font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-2xl dark:text-white">Trending Repositories</h3>
                 <hr className="w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
             </div>
             <ul className="">
