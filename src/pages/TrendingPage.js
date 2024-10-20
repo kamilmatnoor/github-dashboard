@@ -91,7 +91,7 @@ const TrendingPage = () => {
                     <li className="bg-white overflow-hidden sm:rounded-md mx-auto mb-2 shadow-xl" key={index}>
                         <div className="px-4 py-5 sm:px-6">
                             <div className="flex items-center justify-between">
-                                <h3 className="text-lg leading-6 font-medium text-gray-900">{item.full_name}</h3>
+                                <h3 className="text-lg leading-6 font-medium text-gray-900">{item.name}</h3>
                             </div>
                             <div className="mt-4 flex items-center text-left">
                                 <p className="text-sm font-medium text-gray-500">{item.description ? item.description : 'Description is not applicable'}</p>
