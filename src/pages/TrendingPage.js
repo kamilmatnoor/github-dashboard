@@ -116,7 +116,7 @@ const TrendingPage = () => {
                     </div>
                 </div>
             </div>}</div>
-            <div ref={observerRef} style={{ height: '20px' }} />
+            <div ref={observerRef} className="h-2.5" />
         </div>
     );
 };
