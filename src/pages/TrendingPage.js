@@ -21,8 +21,21 @@ const TrendingPage = () => {
     };
 
     const fetchItems = async (pageNumber) => {
-        const response = await api.get(`/search/repositories?q=created:>2024-07-15&sort=stars&order=desc&page=${pageNumber}`);
-        setItems((prev) => [...prev, ...response.data.items]);
+        try {
+            const response = await api.get(`/search/repositories`, {
+                params: {
+                    q: "created:>2024-07-15",
+                    page: pageNumber,
+                    sort: 'stars',
+                    order: 'desc'
+                }
+            });
+            setItems((prev) => [...prev, ...response.data.items]);
+        } catch (error) {
+            console.log(error);
+            debugger
+        }
+
     };
 
     useEffect(() => {
