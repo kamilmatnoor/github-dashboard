@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeMerge, faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,10 +8,11 @@ const NavigationWidget = () => {
     { name: "Trending", link: "/trending" },
   ];
   let [open, setOpen] = useState(false);
-  const [visitedLinks, setVisitedLinks] = useState('/');
 
-  const handleLinkClick = (path) => {
-    setVisitedLinks(path);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleClick = (index) => {
+    setActiveIndex(index);
   };
 
   return (
@@ -30,9 +31,13 @@ const NavigationWidget = () => {
 
         <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
           {
-            Links.map((link) => (
-              <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7' onClick={() => handleLinkClick(link.link)}>
-                <a href={link.link} className='hover:text-gray-400 duration-500 text-amber-500 font-bold'>{link.name}</a>
+            Links.map((link, index) => (
+              <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
+                <a href={link.link} onClick={(e) => {
+                  e.preventDefault(); // Prevent default anchor behavior
+                  handleClick(index);
+                }}
+                  className={activeIndex === index ? 'active hover:text-gray-400 duration-500 font-bold' : 'inactive hover:text-gray-400 duration-500 font-bold'}>{link.name}</a>
               </li>
             ))
           }
