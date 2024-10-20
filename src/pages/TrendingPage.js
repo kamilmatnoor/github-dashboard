@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import api from "../api/http-request";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-const Repositories = () => {
+const TrendingPage = () => {
     const [items, setItems] = useState([]);
     const [pageNumber, setPageNumber] = useState(1);
     const observerRef = useRef();
@@ -83,4 +83,4 @@ const Repositories = () => {
     );
 };
 
-export default Repositories;
+export default TrendingPage;
