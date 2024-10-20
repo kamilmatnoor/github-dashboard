@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonWidget from '../components/ButtonWidget'
+import ButtonComponent from '../components/ButtonComponent'
 import { Link } from 'react-router-dom';
 const HomePage = () => {
     return (
@@ -10,7 +10,7 @@ const HomePage = () => {
             </div>
             <div className="text-left">
                 <Link to="/trending">
-                    <ButtonWidget>Get Started</ButtonWidget>
+                    <ButtonComponent>Get Started</ButtonComponent>
                 </Link>
             </div>
         </div>

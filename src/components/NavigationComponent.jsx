@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCodeMerge, faXmark, faBars, faLinesLeaning } from '@fortawesome/free-solid-svg-icons'
+import { faCodeMerge, faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
-const NavigationWidget = () => {
+const NavigationComponent = () => {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Trending", link: "/trending" },
@@ -47,4 +47,4 @@ const NavigationWidget = () => {
   )
 }
 
-export default NavigationWidget
+export default NavigationComponent
