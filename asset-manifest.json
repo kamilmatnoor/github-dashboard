@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/github-dashboard/static/css/main.f7ee3157.css",
-    "main.js": "/github-dashboard/static/js/main.897725e1.js",
+    "main.css": "/github-dashboard/static/css/main.612567da.css",
+    "main.js": "/github-dashboard/static/js/main.3fb2077d.js",
     "static/js/453.6858a40f.chunk.js": "/github-dashboard/static/js/453.6858a40f.chunk.js",
     "static/media/logo.svg": "/github-dashboard/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/github-dashboard/index.html",
-    "main.f7ee3157.css.map": "/github-dashboard/static/css/main.f7ee3157.css.map",
-    "main.897725e1.js.map": "/github-dashboard/static/js/main.897725e1.js.map",
+    "main.612567da.css.map": "/github-dashboard/static/css/main.612567da.css.map",
+    "main.3fb2077d.js.map": "/github-dashboard/static/js/main.3fb2077d.js.map",
     "453.6858a40f.chunk.js.map": "/github-dashboard/static/js/453.6858a40f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7ee3157.css",
-    "static/js/main.897725e1.js"
+    "static/css/main.612567da.css",
+    "static/js/main.3fb2077d.js"
   ]
 }
