@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeMerge, faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 
-
-const Nav = () => {
+const NavigationWidget = () => {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Trending", link: "/trending" },
@@ -43,4 +42,4 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default NavigationWidget
